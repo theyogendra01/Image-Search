@@ -1,54 +1,69 @@
+:root {
+  --spacing: 10px;
+  --border-radius: 8px;
+  --font-family: Arial, sans-serif;
+  --primary-bg-color: cornsilk;
+  --primary-color: #343a40;
+  --button-bg-color: #007BFF;
+  --button-hover-color: #0056b3;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f5f5dc;
-  }
-  
-  .container {
-    margin: 20px auto;
-    max-width: 800px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  input {
-    width: 70%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: space-between;
-  }
-  
-  .image-grid img {
-    width: calc(50% - 10px);
-    max-width: none;
-    flex-grow: 1;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  margin-right: var(--spacing);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg-color);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.image-grid {
+  column-count: 4; /* Adjust the number of columns as needed */
+  column-gap: var(--spacing);
+  margin-top: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  margin-bottom: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
